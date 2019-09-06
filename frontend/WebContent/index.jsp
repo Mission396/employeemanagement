@@ -28,34 +28,26 @@
 
 </tr>
 	<tr bgcolor="#A52A2A">
-		<td><b>id</b></td>
-		<td><b>user_id</b></td>
-		<td><b>Password</b></td>
 		<td><b>Name</b></td>
-		<td><b>Email</b></td>
-		<td><b>Department</b></td>
-		<td><b>Salary</b></td>
-		<td><b>Tax Number</b></td>
+		<td><b>Surname</b></td>
+		<td><b>Date of Birth</b></td>
+
 	</tr>
    <%
 	try{	
 		connection = DriverManager.getConnection(connectionUrl+dbName, userId, password);
 		statement=connection.createStatement();
-		String sql ="SELECT * FROM employees";
+		String sql ="SELECT * FROM employee";
 
 		resultSet = statement.executeQuery(sql);
 		while(resultSet.next()){
 	%>
 		<tr bgcolor="#DEB887">
 			
-			<td><%=resultSet.getString("id") %></td>
-			<td><%=resultSet.getString("user_id") %></td>
-			<td><%=resultSet.getString("password") %></td>
 			<td><%=resultSet.getString("name") %></td>
-			<td><%=resultSet.getString("email") %></td>
-			<td><%=resultSet.getString("department") %></td>
-			<td><%=resultSet.getString("salary") %></td>
-			<td><%=resultSet.getString("tax_num") %></td>
+			<td><%=resultSet.getString("surName") %></td>
+			<td><%=resultSet.getString("dateOfBirth") %></td>
+
 			
 		</tr>
 		            
